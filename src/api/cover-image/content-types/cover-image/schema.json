@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cover_images",
+  "info": {
+    "singularName": "cover-image",
+    "pluralName": "cover-images",
+    "displayName": "CoverImage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CoverImage": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
