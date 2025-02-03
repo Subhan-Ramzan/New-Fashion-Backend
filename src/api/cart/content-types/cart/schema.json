@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carts",
+  "info": {
+    "singularName": "cart",
+    "pluralName": "carts",
+    "displayName": "Cart"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "userEmail": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "json"
+    }
+  }
+}

@@ -21,14 +21,19 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
-    "styled-components": "^6.0.0"
+    "strapi": "^3.6.11",
+    "strapi-admin": "^3.1.4",
+    "styled-components": "^6.0.0",
+    "video-react": "^0.16.0"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"
   },
   "strapi": {
     "uuid": "ecb38e50-e4c1-48a0-8ef8-4ac5902b9a8d"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
   }
 }

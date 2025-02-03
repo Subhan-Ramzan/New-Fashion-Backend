@@ -4,7 +4,8 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "Order"
+    "displayName": "Order",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,8 +15,35 @@
     "stripeId": {
       "type": "string"
     },
-    "Products": {
-      "type": "json"
+    "FirstName": {
+      "type": "string",
+      "required": true
+    },
+    "LastName": {
+      "type": "string",
+      "required": true
+    },
+    "City": {
+      "type": "string",
+      "required": true
+    },
+    "Address": {
+      "type": "string",
+      "required": true
+    },
+    "PostalCode": {
+      "type": "string"
+    },
+    "PhoneNumber": {
+      "type": "biginteger",
+      "required": true
+    },
+    "Complete": {
+      "type": "boolean"
+    },
+    "selectedColor": {
+      "type": "integer",
+      "required": true
     }
   }
 }
