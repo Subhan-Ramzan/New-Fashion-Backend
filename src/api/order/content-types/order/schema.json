@@ -44,6 +44,17 @@
     "selectedColor": {
       "type": "integer",
       "required": true
+    },
+    "Option": {
+      "type": "enumeration",
+      "enum": [
+        "Status:",
+        "Processing",
+        "Shipped / Dispatche",
+        "Delivered",
+        "Cancelled"
+      ],
+      "default": "Processing"
     }
   }
 }

@@ -614,6 +614,10 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
       Schema.Attribute.Private;
+    Option: Schema.Attribute.Enumeration<
+      ['Status:', 'Processing', 'Shipped / Dispatche', 'Delivered', 'Cancelled']
+    > &
+      Schema.Attribute.DefaultTo<'Processing'>;
     PhoneNumber: Schema.Attribute.BigInteger & Schema.Attribute.Required;
     PostalCode: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
