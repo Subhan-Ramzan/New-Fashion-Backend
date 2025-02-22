@@ -1,38 +1,38 @@
 module.exports = ({ env }) => ({
-  'users-permissions': {
+  "users-permissions": {
     config: {
-      jwtSecret: env('JWT_SECRET'), // Read JWT Secret from .env file
+      jwtSecret: env("JWT_SECRET", "default_secret"),
     },
   },
   upload: {
     config: {
-      provider: '@strapi/provider-upload-cloudinary',
+      provider: "@strapi/provider-upload-cloudinary",
       providerOptions: {
-        cloud_name: env('CLOUDINARY_NAME'),
-        api_key: env('CLOUDINARY_KEY'),
-        api_secret: env('CLOUDINARY_SECRET'),
+        cloud_name: env("CLOUDINARY_NAME"),
+        api_key: env("CLOUDINARY_KEY"),
+        api_secret: env("CLOUDINARY_SECRET"),
       },
       actionOptions: {
         upload: async (file) => {
-          const fs = require('fs');
-          const path = require('path');
-          const heicConvert = require('heic-convert');
+          const fs = require("fs");
+          const path = require("path");
+          const heicConvert = require("heic-convert");
 
-          if (file.mime === 'image/heic' || file.mime === 'image/heif') {
+          if (file.mime === "image/heic" || file.mime === "image/heif") {
             const inputBuffer = fs.readFileSync(file.tmpPath);
             const outputBuffer = await heicConvert({
               buffer: inputBuffer,
-              format: 'JPEG',
+              format: "JPEG",
               quality: 0.8,
             });
 
-            const newFileName = `${file.name.split('.')[0]}.jpg`;
-            const newFilePath = path.join('/tmp', newFileName);
+            const newFileName = `${file.name.split(".")[0]}.jpg`;
+            const newFilePath = path.join("/tmp", newFileName);
             fs.writeFileSync(newFilePath, Buffer.from(outputBuffer));
 
             file.path = newFilePath;
             file.name = newFileName;
-            file.mime = 'image/jpeg';
+            file.mime = "image/jpeg";
           }
 
           return file;
