@@ -1,3 +1,4 @@
+//config/plugin.js
 module.exports = ({ env }) => ({
   "users-permissions": {
     config: {
