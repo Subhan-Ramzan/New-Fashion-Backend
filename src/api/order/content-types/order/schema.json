@@ -55,6 +55,10 @@
         "Cancelled"
       ],
       "default": "Processing"
+    },
+    "userEmail": {
+      "type": "string",
+      "required": true
     }
   }
 }
